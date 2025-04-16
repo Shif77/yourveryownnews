@@ -53,7 +53,7 @@ const WeekendRestaurant = () => {
         <div className="bg-zinc-900 p-6 shadow-lg border-l-4 border-yellow-400 flex items-center gap-6">
           <div className="relative">
             <div className="w-20 h-20 bg-yellow-400 rounded-full absolute -top-2 -left-2"></div>
-            <Image src="/author.jpg" alt="Author" width={80} height={80} className="rounded-full relative z-10 object-cover" />
+            <Image src="/images/weeknd/athor.png" alt="Author" width={80} height={80} className="rounded-full relative z-10 object-cover" />
           </div>
           <div>
             <p className="text-2xl font-bold text-white">Hasin Arman Shif</p>
@@ -71,7 +71,7 @@ const WeekendRestaurant = () => {
               <span className="text-white group-hover:text-yellow-400 transition-colors duration-300">Atmosphere</span>
             </h2>
             <p className="text-zinc-400 leading-relaxed pl-16">
-              Ember & Vine wraps you in ambiance — swaying string lights, low-fire pits, the murmur of laughter. It's more than a restaurant; it's a stage set for stories.
+              The Eatalia wraps you in ambiance — swaying string lights, low-fire pits, the murmur of laughter. It's more than a restaurant; it's a stage set for stories.
             </p>
           </div>
           
@@ -88,7 +88,7 @@ const WeekendRestaurant = () => {
         
         <div className="relative">
           <div className="absolute -inset-4 border border-yellow-400 -z-10"></div>
-          <img src="/article-1.jpg" alt="Ember & Vine Interior" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+          <img src="/images/weeknd/interior.jpg" alt="Ember & Vine Interior" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
         </div>
       </section>
       
@@ -99,7 +99,7 @@ const WeekendRestaurant = () => {
             <span className="inline-block px-4 border-b-2 border-yellow-400 pb-2">In the Author's Words</span>
           </h2>
           <p className="text-zinc-300 leading-relaxed text-xl text-center italic font-light">
-            "I first came to Ember & Vine on a whim — now it's a monthly ritual. There's a rhythm to this place, like a hidden song only the weekend can hear. It's where I write, reflect, and refill my creative tank."
+            "I first came to Eatalia on a whim — now it's a monthly ritual. There's a rhythm to this place, like a hidden song only the weekend can hear. It's where I write, reflect, and refill my creative tank."
           </p>
         </div>
       </section>
@@ -108,15 +108,15 @@ const WeekendRestaurant = () => {
       <section className="max-w-6xl mx-auto py-24 px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h2 className="text-3xl font-bold mb-8 text-yellow-400">Find Ember & Vine</h2>
+            <h2 className="text-3xl font-bold mb-8 text-yellow-400">Find The Eatalia</h2>
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="w-12 h-12 bg-yellow-400 flex items-center justify-center mr-4">
                   <span className="text-black text-xl">📍</span>
                 </div>
                 <div>
-                  <p className="text-white text-lg">520 Skyview Terrace</p>
-                  <p className="text-zinc-400">Downtown District</p>
+                  <p className="text-white text-lg">Beside Sony Square</p>
+                  <p className="text-zinc-400">Mirpur 1, Dhaka - 1216</p>
                 </div>
               </div>
               
@@ -135,15 +135,15 @@ const WeekendRestaurant = () => {
           <div className="md:border-l border-yellow-400 md:pl-8">
             <h2 className="text-3xl font-bold mb-8 text-yellow-400">Connect</h2>
             <div className="space-y-4">
-              <a href="#" className="flex items-center group">
+              <a href="https://www.instagram.com/suchita.official/" className="flex items-center group">
                 <span className="w-8 h-1 bg-yellow-400 mr-4 group-hover:w-12 transition-all duration-300"></span>
                 <span className="text-white group-hover:text-yellow-400 transition-colors duration-300">Instagram</span>
               </a>
-              <a href="#" className="flex items-center group">
+              <a href="https://www.facebook.com/profile.php?id=61565536405395" className="flex items-center group">
                 <span className="w-8 h-1 bg-yellow-400 mr-4 group-hover:w-12 transition-all duration-300"></span>
                 <span className="text-white group-hover:text-yellow-400 transition-colors duration-300">Facebook</span>
               </a>
-              <a href="#" className="flex items-center group">
+              <a href="https://www.tripadvisor.com/Restaurants-g293936-zfp49-Dhaka_City_Dhaka_Division.html" className="flex items-center group">
                 <span className="w-8 h-1 bg-yellow-400 mr-4 group-hover:w-12 transition-all duration-300"></span>
                 <span className="text-white group-hover:text-yellow-400 transition-colors duration-300">Website</span>
               </a>
@@ -155,7 +155,7 @@ const WeekendRestaurant = () => {
       {/* Footer */}
       <footer className="bg-zinc-900 py-12 border-t border-zinc-800">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-zinc-500 mb-4 md:mb-0">Experience the extraordinary at Ember & Vine</p>
+          <p className="text-zinc-500 mb-4 md:mb-0">Experience the extraordinary at THE EATALIA</p>
           <Link href="/">
             <button className="group relative px-8 py-3 overflow-hidden">
               <span className="absolute inset-0 w-0 bg-yellow-400 transition-all duration-500 ease-out group-hover:w-full"></span>
