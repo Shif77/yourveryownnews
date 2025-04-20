@@ -44,21 +44,25 @@ export default function HiddenGems() {
 
       {/* Hero Banner */}
       <section className="relative h-96 w-full overflow-hidden flex items-center justify-center">
-        <div 
-          className="absolute inset-0 z-0"
-          style={{ 
-            backgroundImage: "url('/hidden-hero.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "brightness(0.7)"
-          }}
-        />
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hidden/band.png"
+            alt="Panthapath Lake"
+            fill
+            style={{ 
+              objectFit: 'cover',
+              objectPosition: 'center',
+              filter: "brightness(0.7)" 
+            }}
+            priority
+          />
+        </div>
         <div className="relative z-10 text-center px-6">
           <h1 className="text-4xl sm:text-5xl font-bold text-white drop-shadow-lg">
-            Panthapath Lake Retreat
+            Bandarban : Town in Bangladesh
           </h1>
           <p className="text-xl text-yellow-300 mt-4 mb-6">
-            Dhaka's best kept secret, hiding in plain sight
+           Bandarban's best kept secret, hiding in plain sight
           </p>
           <button className="bg-yellow-500 text-black py-2 px-6 rounded-full font-medium">
             Explore
@@ -96,40 +100,88 @@ export default function HiddenGems() {
           <div>
             <div className="prose max-w-none">
               <p className="text-xl leading-relaxed">
-                Not many know about the serene lake behind Panthapath — a quiet escape where nature paints golden hues on water at dusk.
-                This retreat is more than just a place; it's a feeling. Morning joggers whisper their greetings, and old men
-                sit with flasks of tea, remembering the past.
+              বান্দরবান চট্টগ্রাম বিভাগের একটি ছোট শহর। এটি বান্দরবান জেলার সদর দপ্তর। শহরটি সাঙ্গু নদীর তীরে অবস্থিত।
+
+জনসংখ্যাতাত্ত্বিক তথ্য
+বান্দরবানে ধর্মীয় বিভাজন (২০২২):
+
+ইসলাম – ৬০.৭৭%
+
+বৌদ্ধধর্ম – ২১.১১%
+
+হিন্দু ধর্ম – ১৪.৬৮%
+
+খ্রিস্টান ধর্ম – ৩.২১%
+
+অন্যান্য বা অনির্দিষ্ট – ০.২৩%
+
+২০২২ সালের বাংলাদেশ আদমশুমারি অনুযায়ী, বান্দরবান শহরের মোট জনসংখ্যা ছিল ৫৪,৪৫০ এবং সাক্ষরতার হার ছিল ৮৫.৯৯%।
+
+২০১১ সালের আদমশুমারি অনুযায়ী, বান্দরবানে মোট ৮,৬৯৯টি পরিবার এবং জনসংখ্যা ছিল ৪১,৪৩৪। এর মধ্যে ৮,৫৬১ জন (২০.৬৬%) ছিল ১০ বছরের নিচে। শহরটির সাক্ষরতার হার ছিল ৬৭.১১% (৭ বছর বা তদূর্ধ্ব), যেখানে জাতীয় গড় ছিল ৫১.৮%। লিঙ্গ অনুপাতে প্রতি ১০০০ পুরুষে নারীর সংখ্যা ছিল ৭৮৭ জন। বান্দরবানে জাতিগত জনগোষ্ঠীর সংখ্যা ছিল ৮,৬১০ (২০.৭৮%), যার মধ্যে মারমা ছিল ৫,৪৯৪ জন এবং ত্রিপুরা ৮৮০ জন।
               </p>
               <div className="my-6 relative">
                 <img 
-                  src="/api/placeholder/1000/600" 
+                  src="/images/hidden/lake.jpg"
                   alt="Lake View" 
                   className="rounded-lg w-full"
                 />
               </div>
               <h3 className="text-2xl font-bold mt-8 mb-4">A Hidden Ecosystem</h3>
               <p>
-                What makes this lake truly special is its thriving ecosystem. Despite being surrounded by urban development, the lake hosts:
+              বাংলাদেশের প্রকৃতির স্বর্গ বলে পরিচিত বান্দরবান এমন এক জায়গা যেখানে আপনি শহরের কোলাহল থেকে দূরে গিয়ে প্রকৃতির কোলে বিশ্রাম নিতে পারেন। নিচে কয়েকটি কারণে বান্দরবানে যাওয়া উচিত:
               </p>
               <ul className="list-disc pl-5 space-y-2">
-                <li>Over 20 species of birds, including kingfishers and herons</li>
-                <li>Several varieties of local fish that local fishermen carefully maintain</li>
-                <li>Water lilies that bloom spectacularly during summer months</li>
-                <li>Ancient banyan trees estimated to be over 100 years old</li>
+                <li>🌄 অসাধারণ প্রাকৃতিক সৌন্দর্য</li>
+                <li>🧗 পর্বতারোহণ ও ট্রেকিংয়ের অভিজ্ঞতা</li>
+                <li>🕊️ শান্তিপূর্ণ পরিবেশ</li>
+                <li>🏞️ নৃগোষ্ঠীর বৈচিত্র্য ও সংস্কৃতি</li>
+                <li>🛶 সাঙ্গু নদীর রোমাঞ্চকর বোট রাইড</li>
+                <li>📸 ফটোগ্রাফি ও ক্যাম্পিং</li>
               </ul>
               <div className="bg-yellow-50 p-6 rounded-lg my-6">
                 <h4 className="font-bold text-lg flex items-center">
-                  <span className="mr-2 text-yellow-600"><MapPinIcon /></span> How to Get There
+                  <span className="mr-2 text-yellow-600"><MapPinIcon /></span> ঢাকা থেকে বান্দরবানে কীভাবে যাবেন?
                 </h4>
                 <p className="mt-2">
-                  From Panthapath signal, walk toward Square Hospital and take the small lane beside the yellow pharmacy.
-                  After 5 minutes of walking, the lake opens up beside an old mango tree. Rickshaws are available from all nearby bus stops.
+                বাসে (সবচেয়ে জনপ্রিয় ও সহজ উপায়):
+ঢাকা থেকে সরাসরি বান্দরবানের উদ্দেশ্যে বেশ কয়েকটি নন-এসি ও এসি বাস চলাচল করে।
+
+🚌 বাস কোম্পানি ও টার্মিনাল:
+
+Shyamoli Paribahan (কল্যাণপুর, সায়েদাবাদ, গাবতলী)
+
+Hanif Enterprise
+
+Soudia Paribahan
+
+Unique Service
+
+⏰ ভ্রমণের সময়: প্রায় 8-10 ঘণ্টা
+💰 টিকিটের মূল্য:
+
+নন-এসি: ৯৫০-১২০০ টাকা
+
+এসি: ১৪০০-১৮০০ টাকা (পরিবহন ও আসন অনুযায়ী ভিন্ন হতে পারে)
                 </p>
               </div>
-              <h3 className="text-2xl font-bold mt-8 mb-4">Best Times to Visit</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">ভ্রমণের সেরা সময়</h3>
               <p>
-                Early mornings (6AM-8AM) offer the most serene experience with beautiful mist over the water. Evenings around sunset (5PM-6:30PM) 
-                provide spectacular golden light perfect for photography. Weekdays are generally less crowded than weekends.
+              বান্দরবান ভ্রমণের জন্য বছরের নির্দিষ্ট কয়েকটি সময় বিশেষভাবে উপযুক্ত:
+
+🍃 শীতকাল (নভেম্বর - ফেব্রুয়ারি):
+এই সময়ে আবহাওয়া থাকে ঠান্ডা, আরামদায়ক এবং পরিষ্কার। পাহাড় ঘেরা প্রাকৃতিক সৌন্দর্য উপভোগের জন্য এটাই সেরা সময়।
+
+🌧️ বর্ষাকাল (জুন - আগস্ট):
+যারা সবুজে মোড়ানো, মেঘে ঢাকা পাহাড় আর ঝরনার আসল রূপ দেখতে চান, তাদের জন্য বর্ষাকাল একেবারে উপযুক্ত। তবে এই সময়ে রাস্তা কিছুটা পিচ্ছিল ও বিপজ্জনক হতে পারে, তাই সাবধান থাকা জরুরি।
+
+🌸 বসন্তকাল (মার্চ - এপ্রিল):
+এই সময়ে আবহাওয়া তুলনামূলকভাবে মৃদু থাকে এবং প্রকৃতি থাকে ফুলে-ফলে ভরপুর। কম ভিড় এবং শান্তিপূর্ণ পরিবেশের জন্য ভালো সময়।
+
+ভ্রমণ পরামর্শ:
+
+পর্যটনের ভিড় এড়াতে চাইলে সরকারি ছুটি এবং পিক সিজনে ভ্রমণ এড়িয়ে চলা ভালো।
+
+বর্ষাকালে গেলে অবশ্যই ভালো গ্রিপবিশিষ্ট জুতা এবং রেইনকোট সঙ্গে রাখুন।
               </p>
             </div>
           </div>
