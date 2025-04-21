@@ -59,7 +59,7 @@ export default function Home() {
           </div>
         </Link>
 
-        <Link href="/breakingfreepage">
+        <Link href="/identity">
           <div className="md:col-span-1 bg-zinc-800 rounded-xl shadow-md relative overflow-hidden cursor-pointer transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
             <img src="/images/peaky.jpg" alt="Featured" className="w-full h-[250px] object-cover" />
             <div className="absolute bottom-0 left-4 text-left text-white p-4 rounded-lg max-w-[90%]">
