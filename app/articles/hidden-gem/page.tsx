@@ -100,24 +100,28 @@ export default function HiddenGems() {
           <div>
             <div className="prose max-w-none">
               <p className="text-xl leading-relaxed">
-              বান্দরবান চট্টগ্রাম বিভাগের একটি ছোট শহর। এটি বান্দরবান জেলার সদর দপ্তর। শহরটি সাঙ্গু নদীর তীরে অবস্থিত।
+              
+              বান্দরবান চট্টগ্রাম বিভাগের একটি ছোট শহর। এটি বান্দরবান জেলার সদর দপ্তর। শহরটি সাঙ্গু নদীর তীরে অবস্থিত। <br />
 
-জনসংখ্যাতাত্ত্বিক তথ্য
-বান্দরবানে ধর্মীয় বিভাজন (২০২২):
+জনসংখ্যাতাত্ত্বিক তথ্য <br />
+<br />
+বান্দরবানে ধর্মীয় বিভাজন (২০২২): <br />
 
-ইসলাম – ৬০.৭৭%
+ইসলাম – ৬০.৭৭% <br />
 
-বৌদ্ধধর্ম – ২১.১১%
+বৌদ্ধধর্ম – ২১.১১% <br />
 
-হিন্দু ধর্ম – ১৪.৬৮%
+হিন্দু ধর্ম – ১৪.৬৮% <br />
 
-খ্রিস্টান ধর্ম – ৩.২১%
+খ্রিস্টান ধর্ম – ৩.২১% <br />
 
-অন্যান্য বা অনির্দিষ্ট – ০.২৩%
+অন্যান্য বা অনির্দিষ্ট – ০.২৩% <br />
+<br />
 
-২০২২ সালের বাংলাদেশ আদমশুমারি অনুযায়ী, বান্দরবান শহরের মোট জনসংখ্যা ছিল ৫৪,৪৫০ এবং সাক্ষরতার হার ছিল ৮৫.৯৯%।
+২০২২ সালের বাংলাদেশ আদমশুমারি অনুযায়ী, বান্দরবান শহরের মোট জনসংখ্যা ছিল ৫৪,৪৫০ এবং সাক্ষরতার হার ছিল ৮৫.৯৯%। <br />
 
-২০১১ সালের আদমশুমারি অনুযায়ী, বান্দরবানে মোট ৮,৬৯৯টি পরিবার এবং জনসংখ্যা ছিল ৪১,৪৩৪। এর মধ্যে ৮,৫৬১ জন (২০.৬৬%) ছিল ১০ বছরের নিচে। শহরটির সাক্ষরতার হার ছিল ৬৭.১১% (৭ বছর বা তদূর্ধ্ব), যেখানে জাতীয় গড় ছিল ৫১.৮%। লিঙ্গ অনুপাতে প্রতি ১০০০ পুরুষে নারীর সংখ্যা ছিল ৭৮৭ জন। বান্দরবানে জাতিগত জনগোষ্ঠীর সংখ্যা ছিল ৮,৬১০ (২০.৭৮%), যার মধ্যে মারমা ছিল ৫,৪৯৪ জন এবং ত্রিপুরা ৮৮০ জন।
+<br />
+২০১১ সালের আদমশুমারি অনুযায়ী, বান্দরবানে মোট ৮,৬৯৯টি পরিবার এবং জনসংখ্যা ছিল ৪১,৪৩৪। এর মধ্যে ৮,৫৬১ জন (২০.৬৬%) ছিল ১০ বছরের নিচে। <br /> শহরটির সাক্ষরতার হার ছিল ৬৭.১১% (৭ বছর বা তদূর্ধ্ব), যেখানে জাতীয় গড় ছিল ৫১.৮%। <br /> লিঙ্গ অনুপাতে প্রতি ১০০০ পুরুষে নারীর সংখ্যা ছিল ৭৮৭ জন। <br /> বান্দরবানে জাতিগত জনগোষ্ঠীর সংখ্যা ছিল ৮,৬১০ (২০.৭৮%), যার মধ্যে মারমা ছিল ৫,৪৯৪ জন এবং ত্রিপুরা ৮৮০ জন।
               </p>
               <div className="my-6 relative">
                 <img 
@@ -126,7 +130,7 @@ export default function HiddenGems() {
                   className="rounded-lg w-full"
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-8 mb-4">A Hidden Ecosystem</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">একটি লুকানো বাস্তুতন্ত্র</h3>
               <p>
               বাংলাদেশের প্রকৃতির স্বর্গ বলে পরিচিত বান্দরবান এমন এক জায়গা যেখানে আপনি শহরের কোলাহল থেকে দূরে গিয়ে প্রকৃতির কোলে বিশ্রাম নিতে পারেন। নিচে কয়েকটি কারণে বান্দরবানে যাওয়া উচিত:
               </p>
@@ -144,65 +148,71 @@ export default function HiddenGems() {
                 </h4>
                 <p className="mt-2">
                 বাসে (সবচেয়ে জনপ্রিয় ও সহজ উপায়):
-ঢাকা থেকে সরাসরি বান্দরবানের উদ্দেশ্যে বেশ কয়েকটি নন-এসি ও এসি বাস চলাচল করে।
+ঢাকা থেকে সরাসরি বান্দরবানের উদ্দেশ্যে বেশ কয়েকটি নন-এসি ও এসি বাস চলাচল করে। <br />
+<br />
 
-🚌 বাস কোম্পানি ও টার্মিনাল:
+🚌 বাস কোম্পানি ও টার্মিনাল: <br />
 
-Shyamoli Paribahan (কল্যাণপুর, সায়েদাবাদ, গাবতলী)
+Shyamoli Paribahan (কল্যাণপুর, সায়েদাবাদ, গাবতলী) <br />
 
-Hanif Enterprise
+Hanif Enterprise <br />
 
-Soudia Paribahan
+Soudia Paribahan <br />
 
-Unique Service
+Unique Service <br />
+<br />
 
-⏰ ভ্রমণের সময়: প্রায় 8-10 ঘণ্টা
-💰 টিকিটের মূল্য:
+⏰ ভ্রমণের সময়: প্রায় 8-10 ঘণ্টা <br />
+💰 টিকিটের মূল্য: <br />
 
-নন-এসি: ৯৫০-১২০০ টাকা
+নন-এসি: ৯৫০-১২০০ টাকা <br />
 
 এসি: ১৪০০-১৮০০ টাকা (পরিবহন ও আসন অনুযায়ী ভিন্ন হতে পারে)
                 </p>
               </div>
               <h3 className="text-2xl font-bold mt-8 mb-4">ভ্রমণের সেরা সময়</h3>
               <p>
-              বান্দরবান ভ্রমণের জন্য বছরের নির্দিষ্ট কয়েকটি সময় বিশেষভাবে উপযুক্ত:
+              বান্দরবান ভ্রমণের জন্য বছরের নির্দিষ্ট কয়েকটি সময় বিশেষভাবে উপযুক্ত: <br />
 
-🍃 শীতকাল (নভেম্বর - ফেব্রুয়ারি):
-এই সময়ে আবহাওয়া থাকে ঠান্ডা, আরামদায়ক এবং পরিষ্কার। পাহাড় ঘেরা প্রাকৃতিক সৌন্দর্য উপভোগের জন্য এটাই সেরা সময়।
+              <br />
+              🍃 শীতকাল (নভেম্বর - ফেব্রুয়ারি): 
+              বান্দরবান ভ্রমণের জন্য বছরের নির্দিষ্ট কয়েকটি সময় বিশেষভাবে উপযুক্ত: <br />
+              এই সময়ে আবহাওয়া থাকে ঠান্ডা, আরামদায়ক এবং পরিষ্কার। পাহাড় ঘেরা প্রাকৃতিক সৌন্দর্য উপভোগের জন্য এটাই সেরা সময়। <br />
+              <br />
+🌧️ বর্ষাকাল (জুন - আগস্ট): <br />
+যারা সবুজে মোড়ানো, মেঘে ঢাকা পাহাড় আর ঝরনার আসল রূপ দেখতে চান, তাদের জন্য বর্ষাকাল একেবারে উপযুক্ত। তবে এই সময়ে রাস্তা কিছুটা পিচ্ছিল ও বিপজ্জনক হতে পারে, তাই সাবধান থাকা জরুরি। <br />
+<br />
+ 
+🌸 বসন্তকাল (মার্চ - এপ্রিল): <br />
+এই সময়ে আবহাওয়া তুলনামূলকভাবে মৃদু থাকে এবং প্রকৃতি থাকে ফুলে-ফলে ভরপুর। কম ভিড় এবং শান্তিপূর্ণ পরিবেশের জন্য ভালো সময়। <br />
+<br />
 
-🌧️ বর্ষাকাল (জুন - আগস্ট):
-যারা সবুজে মোড়ানো, মেঘে ঢাকা পাহাড় আর ঝরনার আসল রূপ দেখতে চান, তাদের জন্য বর্ষাকাল একেবারে উপযুক্ত। তবে এই সময়ে রাস্তা কিছুটা পিচ্ছিল ও বিপজ্জনক হতে পারে, তাই সাবধান থাকা জরুরি।
+ভ্রমণ পরামর্শ: <br />
 
-🌸 বসন্তকাল (মার্চ - এপ্রিল):
-এই সময়ে আবহাওয়া তুলনামূলকভাবে মৃদু থাকে এবং প্রকৃতি থাকে ফুলে-ফলে ভরপুর। কম ভিড় এবং শান্তিপূর্ণ পরিবেশের জন্য ভালো সময়।
+পর্যটনের ভিড় এড়াতে চাইলে সরকারি ছুটি এবং পিক সিজনে ভ্রমণ এড়িয়ে চলা ভালো। <br />
 
-ভ্রমণ পরামর্শ:
-
-পর্যটনের ভিড় এড়াতে চাইলে সরকারি ছুটি এবং পিক সিজনে ভ্রমণ এড়িয়ে চলা ভালো।
-
-বর্ষাকালে গেলে অবশ্যই ভালো গ্রিপবিশিষ্ট জুতা এবং রেইনকোট সঙ্গে রাখুন।
+বর্ষাকালে গেলে অবশ্যই ভালো গ্রিপবিশিষ্ট জুতা এবং রেইনকোট সঙ্গে রাখুন। <br />
               </p>
             </div>
           </div>
         )}
 
-        {activeTab === 'gallery' && (
-          <div>
-            <h2 className="text-2xl font-bold mb-6">Photo Gallery</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((index) => (
-                <div key={index} className="rounded-lg overflow-hidden">
-                  <img 
-                    src={`/api/placeholder/400/${300 + index * 10}`}
-                    alt={`Lake view ${index}`}
-                    className="w-full h-64 object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+{activeTab === 'gallery' && (
+  <div>
+    <h2 className="text-2xl font-bold mb-6">Photo Gallery</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {[1, 2, 3, 4].map((index) => (
+        <div key={index} className="rounded-lg overflow-hidden">
+          <img 
+            src={`/images/hidden/lake${index}.jpg`} 
+            alt={`Lake view ${index}`} 
+            className="w-full h-64 object-cover"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+)}
 
         {activeTab === 'stories' && (
           <div>
@@ -213,31 +223,46 @@ Unique Service
               </button>
             </div>
             <div className="space-y-6">
-              <div className={`${darkMode ? 'bg-zinc-800 text-white' : 'bg-white'} border rounded-lg shadow p-6`}>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className={`${darkMode ? 'bg-zinc-700' : 'bg-zinc-200'} w-12 h-12 rounded-full`}></div>
-                  <div>
-                    <h4 className="font-bold">Rafiq Ahmed</h4>
-                    <p className="text-sm text-zinc-500">April 12, 2025</p>
-                  </div>
-                </div>
-                <p className="mb-4">I discovered this lake during my morning jog. The sunrise here is absolutely magical!</p>
-                <img 
-                  src="/api/placeholder/600/400" 
-                  alt="User photo" 
-                  className="w-full h-64 object-cover rounded-lg"
-                />
-              </div>
-              <div className={`${darkMode ? 'bg-zinc-800 text-white' : 'bg-white'} border rounded-lg shadow p-6`}>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className={`${darkMode ? 'bg-zinc-700' : 'bg-zinc-200'} w-12 h-12 rounded-full`}></div>
-                  <div>
-                    <h4 className="font-bold">Mina Rahman</h4>
-                    <p className="text-sm text-zinc-500">April 15, 2025</p>
-                  </div>
-                </div>
-                <p>This hidden spot became my favorite reading corner. So peaceful despite being in the middle of Dhaka.</p>
-              </div>
+            <div className={`${darkMode ? 'bg-zinc-800 text-white' : 'bg-white'} border rounded-lg shadow p-6`}>
+  <div className="flex items-center gap-4 mb-4">
+    <img 
+      src="/images/hidden/anamul.jpg" 
+      alt="Anamul Hasan" 
+      className="w-12 h-12 rounded-full object-cover"
+    />
+    <div>
+      <h4 className="font-bold">Anamul Hasan</h4>
+      <p className="text-sm text-zinc-500">April 12, 2025</p>
+    </div>
+  </div>
+  <p className="mb-4">I discovered this lake during my morning jog. The sunrise here is absolutely magical!</p>
+  <img 
+    src="/images/hidden/lake1.jpg"
+    alt="Lake view by Anamul" 
+    className="w-full h-64 object-cover rounded-lg"
+  />
+</div>
+
+<div className={`${darkMode ? 'bg-zinc-800 text-white' : 'bg-white'} border rounded-lg shadow p-6`}>
+  <div className="flex items-center gap-4 mb-4">
+    <img 
+      src="/images/hidden/yennefer.jpg" 
+      alt="Yennefer Arman" 
+      className="w-12 h-12 rounded-full object-cover"
+    />
+    <div>
+      <h4 className="font-bold">Yennefer Arman</h4>
+      <p className="text-sm text-zinc-500">April 15, 2025</p>
+    </div>
+  </div>
+  <p className="mb-4">This hidden spot became my favorite reading corner. So peaceful despite being in the middle of nature.</p>
+  <img 
+    src="/images/hidden/lake2.jpg"
+    alt="Lake view by Yennefer" 
+    className="w-full h-64 object-cover rounded-lg"
+  />
+</div>
+
             </div>
             <div className={`${darkMode ? 'bg-zinc-800 text-white' : 'bg-white'} border rounded-lg shadow p-6 mt-8`}>
               <h3 className="text-xl font-bold mb-4">Share Your Story</h3>
