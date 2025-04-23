@@ -33,10 +33,10 @@ export default function IdentityPage() {
 
         {/* Weekly Title */}
         <h1 className="text-4xl font-bold mb-4">Breaking Free: Creating Your Iconic Identity</h1>
-        <p className="text-zinc-400 mb-6">This Week’s Focus · April 22, 2025 · 7 min read</p>
+        <p className="text-zinc-400 mb-6">This Week’s Focus : K N O W T H Y S E L F · April 22, 2025 · 7 min read</p>
 
         <img
-          src="/identity-cover.jpg"
+          src="/images/identity/know.png"
           alt="Creating Identity"
           className="w-full rounded-xl mb-6 shadow-lg"
         />
@@ -95,12 +95,30 @@ export default function IdentityPage() {
             placeholder="Start journaling here..."
           ></textarea>
         </section>
+        {/* Share Button */}
+<div className="mt-6">
+  <button 
+    onClick={() => {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Check out this awesome identity-building series!',
+          url: window.location.href,
+        });
+      } else {
+        alert('Sharing is not supported in your browser.');
+      }
+    }} 
+    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl"
+  >
+    📤 Share this
+  </button>
+</div>
 
         {/* Author Bio */}
         <section className="mt-12 border-t pt-6 border-zinc-700 text-zinc-400">
           <h3 className="font-semibold text-white text-xl">About the Author</h3>
           <div className="flex items-center space-x-4 mt-4">
-            <img src="/hasin-avatar.jpg" alt="Author" className="w-12 h-12 rounded-full" />
+            <img src="/images/weeknd/athor.png" alt="Author" className="w-12 h-12 rounded-full" />
             <p>
               Hasin Arman Shifa is passionate about helping people build their authentic identity. 
               He shares weekly insights to inspire you to become your most iconic self.
@@ -117,6 +135,18 @@ export default function IdentityPage() {
             <li><Link href="/identity/week-3">Week 3: Communication that Resonates</Link></li>
           </ul>
         </section>
+
+        {/* Premium Option */}
+<div className="mt-16 text-center border-t border-gray-300 pt-10">
+  <h2 className="text-2xl font-bold mb-2">🚀 Get More With Premium</h2>
+  <p className="mb-4 text-gray-700">Unlock weekly exclusive updates, deeper insights, and secret tools to supercharge your identity journey.</p>
+  <Link href="/premium">
+    <button className="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 rounded-2xl font-semibold shadow-md">
+      🔓 Upgrade to Premium
+    </button>
+  </Link>
+</div>
+        
 
         {/* Back button */}
         <div className="mt-10">
