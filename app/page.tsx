@@ -171,7 +171,7 @@ export default function Home() {
         <div className="relative">
           <iframe
             className="w-full aspect-video"
-            src="https://www.youtube.com/embed/3OC_9yQkKjs"
+            src="https://www.youtube.com/embed/zIZaDTfmVsA?start=23"
             title="Featured Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

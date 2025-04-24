@@ -4,6 +4,11 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { ArrowRight, Star, BookOpen, Users, Award } from "lucide-react";
 import { ReactNode  } from 'react';
+import { motion } from 'framer-motion';
+
+
+
+
 
 
 export default function CareerPage() {
@@ -12,22 +17,28 @@ export default function CareerPage() {
 
   const testimonials = [
     {
-      name: "Alex Johnson",
+      name: "Arafat Sharif",
       role: "Product Manager",
       quote: "The storytelling framework completely transformed my interview approach. I landed my dream job after just two practice sessions!",
-      img: "/api/placeholder/64/64"
+      img: "/images/career/arafat.jpg"
     },
     {
-      name: "Priya Sharma",
+      name: "Ekah Zaman",
       role: "UX Designer",
       quote: "Learning to craft compelling stories about my work helped me showcase my impact in a way that resonated with hiring managers.",
-      img: "/api/placeholder/64/64"
+      img: "/images/career/Yennefer.jpg"
     }
   ];
 
   return (
     <main className="max-w-5xl mx-auto px-6 py-12 bg-white text-gray-900">
       {/* Hero Section */}
+      <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+>
+
       <section className="relative bg-gradient-to-br from-indigo-700 to-purple-800 rounded-3xl overflow-hidden mb-12 text-white">
         <div className="absolute inset-0 bg-black opacity-10 pattern-dots"></div>
         <div className="relative z-10 p-10 md:p-16">
@@ -48,7 +59,7 @@ export default function CareerPage() {
               </button>
             </Link>
             <button
-              className="px-6 py-3 bg-white bg-opacity-20 hover:bg-opacity-40 text-white font-medium rounded-xl flex items-center justify-center gap-2 transition-all"
+              className="px-6 py-3 bg-yellow bg-opacity-20 hover:bg-opacity-40 text-white font-medium rounded-xl flex items-center justify-center gap-2 transition-all"
               onClick={() => setIsVideoPlaying(true)}
             >
               <span className="h-5 w-5 bg-white rounded-full flex items-center justify-center">
@@ -58,12 +69,17 @@ export default function CareerPage() {
             </button>
           </div>
         </div>
-        <div className="absolute bottom-0 right-0 w-1/3 hidden lg:block">
-          <img src="/api/placeholder/300/300" alt="Career growth illustration" className="w-full" />
-        </div>
+        
       </section>
+      </motion.div>
 
       {/* Current Week's Featured Skill */}
+      <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+>
+
       <section className="bg-white rounded-2xl shadow-lg mb-12 overflow-hidden">
         <div className="p-8">
           <div className="flex items-center justify-between mb-6">
@@ -118,22 +134,47 @@ export default function CareerPage() {
               </div>
             </div>
 
-            <div className="md:w-1/3 bg-gray-50 p-6 rounded-xl">
-              <h4 className="font-semibold mb-4">Weekly Challenge</h4>
-              <div className="space-y-4">
-                <p className="text-gray-800">Craft your most compelling work story using our STAR template.</p>
-                <div className="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600">
-                  Practice Exercise
-                </div>
-                <p className="text-sm text-gray-500 italic">Premium members get personalized feedback on their stories</p>
-                <Link href="/premium">
-                  <button className="w-full px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg flex items-center justify-center gap-2 transition-all">
-                    Access Full Challenge
-                    <ArrowRight size={16} />
-                  </button>
-                </Link>
-              </div>
-            </div>
+            <div className="md:w-1/3 bg-gradient-to-br from-white via-gray-50 to-gray-100 p-6 rounded-2xl shadow-lg border border-gray-200 flex flex-col justify-between min-h-[400px]">
+  <div>
+    <h4 className="text-lg font-semibold text-indigo-700 mb-4 flex items-center gap-2 tracking-tight">
+      <span className="inline-block bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-md text-xs font-medium">Weekly</span>
+      Challenge
+    </h4>
+
+    <div className="space-y-5">
+      <p className="text-sm text-gray-700 leading-relaxed font-normal">
+        🚀 <span className="font-medium">Craft your most compelling work story</span> using our <strong className="font-semibold text-indigo-700">STAR template</strong>.
+      </p>
+
+      <div className="relative group h-32 bg-white border border-indigo-200 rounded-xl shadow-inner hover:shadow-lg transition duration-300 flex flex-col items-center justify-center text-indigo-600 cursor-pointer overflow-hidden">
+  <Link href="/templates"> {/* Replace '/templates' with the appropriate path */}
+    <a className="w-full h-full flex flex-col items-center justify-center">
+      <span className="text-base font-medium">📝 Practice Exercise</span>
+      <span className="text-xs text-gray-500 group-hover:underline">Click to explore templates</span>
+      <div className="absolute inset-0 rounded-xl border-2 border-indigo-300 opacity-10 group-hover:animate-pulse"></div>
+    </a>
+  </Link>
+</div>
+
+      <p className="text-base text-gray-700 leading-relaxed">
+    As a <span className="font-semibold text-indigo-600">Premium member</span>, you will receive tailored feedback on your work story, where our experts will provide actionable insights to help you refine your approach!
+    <br />
+  </p>
+    </div>
+  </div>
+
+  {/* Divider + Bottom CTA */}
+  <div className="mt-6 border-t border-gray-200 pt-4 text-center">
+    <Link href="/premium">
+      <button className="w-full px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-xl flex items-center justify-center gap-2 transition-all tracking-wide hover:scale-105">
+        Access Full Challenge
+        <ArrowRight size={16} />
+      </button>
+    </Link>
+    <p className="text-[11px] text-gray-400 mt-2 italic">New challenge drops every Monday ⏳</p>
+  </div>
+</div>
+
           </div>
         </div>
 
@@ -168,6 +209,7 @@ export default function CareerPage() {
           </div>
         </div>
       </section>
+      </motion.div>
 
       {/* Testimonials */}
       <section className="mb-12">
@@ -193,23 +235,31 @@ export default function CareerPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-gradient-to-br from-indigo-700 to-purple-800 rounded-2xl shadow-lg text-white p-8 text-center">
-        <h2 className="text-3xl font-bold mb-4">Accelerate Your Career Growth</h2>
-        <p className="text-indigo-100 max-w-lg mx-auto mb-8">
-          Get weekly skill training, live practice sessions, and personalized feedback from industry experts — all with our Premium career growth kit.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6 text-white text-sm">
-          <FeatureItem text="Weekly skill workshops" />
-          <FeatureItem text="Practice templates" />
-          <FeatureItem text="Expert feedback" />
-        </div>
-        <Link href="/premium">
-          <button className="px-8 py-4 bg-white text-indigo-700 hover:bg-indigo-100 font-semibold rounded-xl shadow-lg transition-all">
-            Get Premium Access
-          </button>
-        </Link>
-      </section>
+      <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+>
+  <section className="bg-gradient-to-br from-indigo-700 to-purple-800 rounded-2xl shadow-2xl text-white p-8 text-center">
+    <h2 className="text-4xl font-bold mb-6 tracking-tight leading-tight">
+      Accelerate Your Career Growth
+    </h2>
+    <p className="text-indigo-100 max-w-2xl mx-auto mb-8 text-lg">
+      Get weekly skill training, live practice sessions, and personalized feedback from industry experts — all with our Premium career growth kit.
+    </p>
+    <div className="flex flex-col sm:flex-row gap-6 justify-center mb-6 text-white text-sm">
+      <FeatureItem text="Weekly skill workshops" />
+      <FeatureItem text="Practice templates" />
+      <FeatureItem text="Expert feedback" />
+    </div>
+    <Link href="/premium">
+      <button className="px-6 py-2 bg-white text-indigo-700 hover:bg-indigo-100 font-semibold rounded-lg shadow-md transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500">
+        Get Premium Access
+      </button>
+    </Link>
+  </section>
+</motion.div>
+
 
       {/* Video Modal */}
       {isVideoPlaying && (
@@ -225,7 +275,16 @@ export default function CareerPage() {
               </button>
             </div>
             <div className="aspect-video bg-gray-100 flex items-center justify-center text-gray-600">
-              Video Player Placeholder
+            <iframe
+  width="100%"
+  height="100%"
+  src="https://www.youtube.com/embed/zIZaDTfmVsA?start=23"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
             </div>
           </div>
         </div>
@@ -260,5 +319,7 @@ function FeatureItem({ text }: { text: string }) {
       <span className="h-6 w-6 bg-indigo-400 bg-opacity-30 rounded-full flex items-center justify-center text-sm">✓</span>
       <span>{text}</span>
     </div>
+  
   );
 }
+
