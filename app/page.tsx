@@ -54,7 +54,7 @@ export default function Home() {
           <div className="md:col-span-1 bg-zinc-800 rounded-xl shadow-md relative overflow-hidden cursor-pointer transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
             <img src="/images/batman.jpg" alt="Cartoon Ebook" className="w-full h-[250px] object-cover" />
             <div className="absolute bottom-0 left-4 text-left text-white p-4 rounded-lg max-w-[90%]">
-              <h2 className="text-lg font-serif font-bold mb-2">Free Magnetism eBook</h2>
+              <h2 className="text-lg font-serif font-bold mb-2">Your Stories</h2>
             </div>
           </div>
         </Link>
