@@ -23,6 +23,7 @@ import {
   TrendingUp,
   Activity
 } from "lucide-react";
+import PlanningFeatures from '../../components/PlanningFeatures';
 
 const categories = [
   { id: "all", label: "All Plans", icon: Grid },
@@ -46,15 +47,15 @@ const weekendPlans = [
   // Monday Plans
   {
     id: 1,
-    title: "Morning Yoga Session 🧘‍♀️",
-    description: "Start your week with energy and mindfulness. Join a local yoga class or practice at home.",
+    title: "Morning Gym Session 🧘‍♀️",
+    description: "Start your week with energy and mindfulness. Join a local Gym or practice at home.",
     quote: "Monday sets the tone for the week.",
     category: "indoor",
     day: "monday",
     duration: "1 hour",
-    cost: "$15-20",
+    cost: "BDT 100",
     bestTime: "7 AM - 8 AM",
-    location: "Local studio or home",
+    location: "Local Gym or home",
     tips: [
       "Wear comfortable clothes",
       "Bring your own mat",
@@ -74,11 +75,11 @@ const weekendPlans = [
     category: "indoor",
     day: "tuesday",
     duration: "2 hours",
-    cost: "$30-50",
+    cost: "BDT 300-500",
     bestTime: "6 PM - 8 PM",
-    location: "Local culinary school",
+    location: "At your Home",
     tips: [
-      "Bring an apron",
+      "An apron",
       "Take recipe notes",
       "Ask questions",
       "Make friends"
@@ -91,17 +92,17 @@ const weekendPlans = [
   {
     id: 3,
     title: "Midweek Concert 🎵",
-    description: "Catch a live music show at a local venue. Perfect midweek escape.",
+    description: "Catch a live music show at a Dhaka University. Perfect midweek escape.",
     quote: "Music makes everything better.",
     category: "night",
     day: "wednesday",
     duration: "2-3 hours",
-    cost: "$20-40",
+    cost: "Free",
     bestTime: "8 PM - 11 PM",
-    location: "Local music venue",
+    location: "Dhaka university",
     tips: [
       "Check the lineup",
-      "Buy tickets early",
+      "Reserve spot early",
       "Arrive on time",
       "Support local artists"
     ],
@@ -113,12 +114,12 @@ const weekendPlans = [
   {
     id: 4,
     title: "Art Gallery Night 🎨",
-    description: "Visit local galleries during their evening events. Often includes wine and cheese.",
+    description: "Visit local galleries during their evening events. Often includes complementary snacks and drinks",
     quote: "Thursday is the new Friday.",
     category: "indoor",
     day: "thursday",
     duration: "2-3 hours",
-    cost: "Free-$10",
+    cost: "BDT 100",
     bestTime: "6 PM - 9 PM",
     location: "Art district",
     tips: [
@@ -134,15 +135,15 @@ const weekendPlans = [
   // Friday Plans
   {
     id: 5,
-    title: "Sunset Beach Picnic 🏖️",
+    title: "Sunset at Urban",
     description: "End your work week with a relaxing beach picnic watching the sunset.",
-    quote: "Friday feels better at the beach.",
+    quote: "Friday feels better at the river.",
     category: "outdoor",
     day: "friday",
     duration: "2-3 hours",
-    cost: "$20-30",
+    cost: "BDT 200-300",
     bestTime: "5 PM - 8 PM",
-    location: "Local beach",
+    location: "Uttara Diyabari",
     tips: [
       "Pack light snacks",
       "Bring blankets",
@@ -178,19 +179,19 @@ const weekendPlans = [
   // Sunday Plans
   {
     id: 7,
-    title: "Nature Trail Hike 🌲",
-    description: "End your week with a refreshing hike in nature. Perfect for reflection.",
+    title: "Library Visit",
+    description: "End your week with a refreshing Library Visit Perfect for reflection.",
     quote: "Sunday is for soul refreshing.",
     category: "outdoor",
     day: "sunday",
     duration: "3-4 hours",
     cost: "Free",
     bestTime: "9 AM - 1 PM",
-    location: "Local trails",
+    location: "Local Library",
     tips: [
-      "Wear proper shoes",
+      "Wear comfortable clothes",
       "Bring water",
-      "Pack snacks",
+      "Don't forget eyeglass",
       "Check weather"
     ],
     likes: 245,
@@ -529,6 +530,15 @@ export default function PlanYourWeekendPage() {
                         <ArrowRight className="w-6 h-6 text-white" />
                       </button>
                     </div>
+
+                    {/* Add PlanningFeatures component */}
+                    <PlanningFeatures
+                      activityId={filteredPlans[index].id}
+                      title={filteredPlans[index].title}
+                      cost={filteredPlans[index].cost}
+                      location={filteredPlans[index].location}
+                      bestTime={filteredPlans[index].bestTime}
+                    />
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -586,6 +596,15 @@ export default function PlanYourWeekendPage() {
                         {plan.location}
                       </span>
                     </div>
+
+                    {/* Add PlanningFeatures component */}
+                    <PlanningFeatures
+                      activityId={plan.id}
+                      title={plan.title}
+                      cost={plan.cost}
+                      location={plan.location}
+                      bestTime={plan.bestTime}
+                    />
                   </motion.div>
                 ))}
               </div>
