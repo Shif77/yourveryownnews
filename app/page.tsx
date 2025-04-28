@@ -106,7 +106,7 @@ export default function Home() {
         date: "Apr 8, 2025",
       },
       {
-        href: "/articles/urban-artists",
+        href: "/articles/Artist",
         img: "/images/articles/urban.jpg",
         title: "5 Urban Artists You Need to Follow Now",
         category: "Art & Culture",
