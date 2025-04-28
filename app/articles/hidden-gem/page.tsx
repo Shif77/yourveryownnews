@@ -8,7 +8,9 @@ export default function HiddenGem() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [showExploreButton, setShowExploreButton] = useState(false);
+  const [hasStartedExploration, setHasStartedExploration] = useState(false);
   const [currentChapter, setCurrentChapter] = useState(0);
+  const [expandedChapter, setExpandedChapter] = useState<number | null>(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -68,6 +70,10 @@ export default function HiddenGem() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleChapter = (index: number) => {
+    setExpandedChapter(prev => prev === index ? null : index);
+  };
+
   return (
     <div ref={containerRef} className="relative min-h-screen">
       {/* Loading Screen */}
@@ -97,16 +103,17 @@ export default function HiddenGem() {
 
       {/* Hero Section */}
       <motion.section
-        style={{ opacity, scale }}
+        style={{ opacity: hasStartedExploration ? 0 : 1 }}
         className="fixed inset-0 z-10 flex items-center justify-center text-white"
       >
         <div className="relative w-full h-full">
           <Image
-            src="/images/hidden/crystal-cave.jpg"
+            src="/images/hidden/band.png"
             alt="Crystal Cave"
             fill
             className="object-cover"
             priority
+            quality={100}
           />
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
           <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -132,6 +139,10 @@ export default function HiddenGem() {
                 animate={{ opacity: 1 }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  setHasStartedExploration(true);
+                  window.scrollTo(0, 0);
+                }}
                 className="px-8 py-3 bg-white/10 backdrop-blur-md rounded-full 
                          border border-white/20 text-white hover:bg-white/20 
                          transition-all duration-300"
@@ -144,7 +155,7 @@ export default function HiddenGem() {
       </motion.section>
 
       {/* Content Sections */}
-      <div className="relative z-0 pt-screen">
+      <div className={`relative z-0 pt-screen ${hasStartedExploration ? 'block' : 'hidden'}`}>
         {chapters.map((chapter, index) => (
           <section
             key={chapter.id}
@@ -157,7 +168,7 @@ export default function HiddenGem() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+                className="grid grid-cols-1 gap-12 items-center"
               >
                 <div className="space-y-6">
                   <span className="text-sm tracking-wider opacity-75">
@@ -168,15 +179,46 @@ export default function HiddenGem() {
                   <p className="text-lg opacity-60 leading-relaxed">
                     {chapter.description}
                   </p>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => toggleChapter(index)}
+                    className="px-6 py-2 bg-white/10 backdrop-blur-md rounded-full 
+                             border border-white/20 text-white hover:bg-white/20 
+                             transition-all duration-300"
+                  >
+                    {expandedChapter === index ? 'Show Less' : 'Learn More'}
+                  </motion.button>
                 </div>
-                <div className="relative aspect-square rounded-2xl overflow-hidden">
-                  <Image
-                    src={`/images/hidden/chapter-${index + 1}.jpg`}
-                    alt={chapter.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+
+                <AnimatePresence>
+                  {expandedChapter === index && (
+                    <motion.div
+                      key={`chapter-${index}`}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 overflow-hidden"
+                    >
+                      <div className="space-y-4">
+                        <h3 className="text-2xl font-light">Additional Information</h3>
+                        <p className="text-lg opacity-80 leading-relaxed">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                      </div>
+                      <div className="relative aspect-square rounded-2xl overflow-hidden">
+                        <Image
+                          src={`/images/hidden/chapter-${index + 1}.jpg`}
+                          alt={chapter.title}
+                          fill
+                          className="object-cover"
+                          quality={100}
+                        />
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             </div>
           </section>
