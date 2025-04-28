@@ -3,10 +3,40 @@
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence, useInView } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+// Create a client-side only component for floating elements
+const FloatingElements = dynamic(() => Promise.resolve(() => {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {[...Array(20)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-2 h-2 bg-emerald-500 rounded-full"
+          initial={{
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            scale: Math.random() * 2
+          }}
+          animate={{
+            y: [null, Math.random() * window.innerHeight],
+            opacity: [0.2, 0.8, 0.2],
+          }}
+          transition={{
+            duration: Math.random() * 10 + 10,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+      ))}
+    </div>
+  );
+}), { ssr: false });
 
 export default function IdentityPage() {
   const [activeSection, setActiveSection] = useState(0);
   const [isPremium, setIsPremium] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -17,28 +47,36 @@ export default function IdentityPage() {
   const scale = useSpring(useTransform(scrollYProgress, [0, 1], [1, 1.2]), springConfig);
   const rotate = useSpring(useTransform(scrollYProgress, [0, 1], [0, 5]), springConfig);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Smooth scroll to section
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
   return (
     <main className="bg-zinc-900 text-white min-h-screen relative overflow-hidden">
       {/* Premium Badge */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="fixed top-4 right-4 z-50"
-      >
-        <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-2 rounded-full text-sm font-semibold shadow-lg flex items-center gap-2 hover:scale-105 transition-transform duration-300">
-          <span>✨</span>
-          <span>Premium Content</span>
-        </div>
-      </motion.div>
+      {mounted && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="fixed top-4 right-4 z-50"
+        >
+          <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-2 rounded-full text-sm font-semibold shadow-lg flex items-center gap-2 hover:scale-105 transition-transform duration-300">
+            <span>✨</span>
+            <span>Premium Content</span>
+          </div>
+        </motion.div>
+      )}
 
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -55,29 +93,8 @@ export default function IdentityPage() {
         />
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-emerald-500 rounded-full"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              scale: Math.random() * 2
-            }}
-            animate={{
-              y: [null, Math.random() * window.innerHeight],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating Elements - Client-side only */}
+      {mounted && <FloatingElements />}
 
       <div ref={containerRef} className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Article Header */}
