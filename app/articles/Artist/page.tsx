@@ -22,36 +22,36 @@ const topArtists: Artist[] = [
     name: "Encore",
     genre: "Music",
     image: "/images/artist/encore.jpg",
-    bio: "A rising star in the hip-hop scene, known for blending traditional beats with modern electronic elements.",
-    achievements: ["2023 Best New Artist", "Over 1M monthly listeners", "Featured in Rolling Stone"],
+    bio: "Encore is a prominent Bangladeshi rock band formed in 2004. They are known for their energetic live performances, catchy melodies, and heartfelt lyrics. Encore is composed of James (lead vocals, guitar), Bappa (bass, vocals), Jewel (drums, vocals), and Akash (keyboards, vocals). They have released several hit songs and won multiple awards, including the Bangladesh National Film Award for Best Music Direction in 2016.",
+    achievements: ["Over 1M listeners", "Featured in National Awards"],
     social: {
-      instagram: "@skylermoon",
-      twitter: "@skylermoon",
-      spotify: "Skyler Moon"
+      instagram: "@encore",
+      twitter: "@encore",
+      spotify: "Encore"
     }
   },
   {
     name: "Bagdhara",
     genre: "Music",
     image: "/images/artist/bagdhara.jpg",
-    bio: "Revolutionizing street dance with her unique fusion of contemporary and urban styles.",
+    bio: "Bagdhara is an alternative rock band from Bangladesh. They are known for their music, which has been well-received by listeners, particularly young people. Bagdhara recently released their first album, Pochish Bochhor and a pre-released song, Proticchobi  which gained significant popularity.",
     achievements: ["World Dance Champion 2022", "TEDx Speaker", "Dance Workshop Founder"],
     social: {
-      instagram: "@novarae",
-      twitter: "@novarae",
-      spotify: "Nova Rae"
+      instagram: "@Bagdhara",
+      twitter: "@Bagdhara",
+      spotify: "Bagdhara"
     }
   },
   {
     name: "Karnival",
     genre: "Music",
     image: "/images/artist/karnival.jpg",
-    bio: "Transforming urban spaces with vibrant murals that tell powerful stories of community and culture.",
+    bio: "Karnival is a Bangladeshi rock band known for its experimental and innovative sound, starting as a passion project among friends in 2006. They have released albums like Indraloy, Attotshorgo, Dysfunctional Motion Picture, and Mohomukti, and their music includes popular songs like Bhrom, Amar Shotto and Sheishob Din Ratri. Karnivals music has been described as highly experimental and ahead of its time.",
     achievements: ["International Mural Festival Winner", "Public Art Grant Recipient", "Community Art Program Director"],
     social: {
-      instagram: "@zekeblaze",
-      twitter: "@zekeblaze",
-      spotify: "Zeke Blaze"
+      instagram: "@karnival",
+      twitter: "@karnival",
+      spotify: "Karnival"
     }
   },
 ];
@@ -61,36 +61,36 @@ const localArtists: Artist[] = [
     name: "Owned",
     genre: "Music",
     image: "/images/artist/owned.jpg",
-    bio: "NYC's underground trap sensation, bringing raw energy and authentic street stories to the scene.",
+    bio: "The music band Owned is a Bangladeshi band. Their name is derived from the bassist Ratul's catchphrase, owned. The band is also known for Ratul's talent as a guitarist, as he also plays in another band called Breach. Owned has plans to release two new albums, Republic and Tribute, and is working on songs called Nei and Abaro, which they intend to perform solo at a concert.",
     achievements: ["NYC Underground Artist of the Year", "Independent Music Award Winner", "Local Community Activist"],
     social: {
-      instagram: "@lilcomet",
-      twitter: "@lilcomet",
-      spotify: "Lil Comet"
+      instagram: "@Owned",
+      twitter: "@Owned",
+      spotify: "Owned"
     }
   },
   {
     name: "Sunehra Tasnim",
     genre: "Content Creator",
     image: "/images/artist/sunehra.jpg",
-    bio: "Soulful R&B artist with a voice that captures the essence of modern love and life in the city.",
-    achievements: ["Atlanta Music Award Winner", "Soul Train Music Award Nominee", "Community Youth Mentor"],
+    bio: "Sunehra Tasnim is a well-known Bangladeshi content creator, influencer, and freelancer who focuses on lifestyle, fashion, and travel.",
+    achievements: ["Fasion Award Winner", "Soul Train Fasion Award Nominee", "Community Youth Mentor"],
     social: {
-      instagram: "@mayablue",
-      twitter: "@mayablue",
-      spotify: "Maya Blue"
+      instagram: "@Sunehra",
+      twitter: "@Sunehra",
+      spotify: "Sunehra"
     }
   },
   {
     name: "Nadir On The Go",
     genre: "Travel Vlogger",
     image: "/images/artist/nadir.jpg",
-    bio: "LA's legendary street artist, known for iconic murals that define the city's urban art scene.",
+    bio: "A multi-award-winning travel filmmaker and content creator who has built a global brand with over 7 Million followers.",
     achievements: ["LA Art Council Award", "International Street Art Festival Headliner", "Art Education Program Founder"],
     social: {
-      instagram: "@jaxonyx",
-      twitter: "@jaxonyx",
-      spotify: "Jax Onyx"
+      instagram: "@Nadir",
+      twitter: "@Nadir",
+      spotify: "Nadir"
     }
   },
 ];
@@ -275,7 +275,7 @@ export default function ArtistPage() {
               name: "Ayush Gauchan",
               genre: "Music",
               image: "/images/artist/ayush.jpg",
-              bio: "A rising star in the music industry, known for his unique blend of traditional and modern sounds.",
+              bio: "A rising star in the music industry, Ayush Gauchan is a singer-songwriter known for his soulful voice and introspective lyrics.",
               achievements: ["2023 Best New Artist", "Over 1M monthly listeners", "Featured in Rolling Stone"],
               social: {
                 instagram: "@ayushgauchan",
@@ -284,12 +284,15 @@ export default function ArtistPage() {
               }
             })}
           >
-            <Image
-              src="/images/artist/ayush.jpg"
-              alt="Featured Artist"
-              fill
-              className="object-cover"
-            />
+            <div className="max-w-[90vw] max-h-[90vh] overflow-hidden rounded-2xl">
+  <Image
+    src="/images/artist/ayush.jpg"
+    alt="Ayush Gauchan"
+    width={500}
+    height={500}
+    className="w-full h-auto object-cover"
+  />
+</div>
           </motion.div>
           <div className="flex-1">
             <h3 className="text-4xl font-light mb-4 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
@@ -333,7 +336,7 @@ export default function ArtistPage() {
                 </div>
                 <audio
                   ref={audioRef}
-                  src="/audio/featured-track.mp3"
+                  src="/images/artist/maya.mp3"
                   onTimeUpdate={handleTimeUpdate}
                   onLoadedMetadata={handleTimeUpdate}
                 />
@@ -550,92 +553,109 @@ export default function ArtistPage() {
         </div>
       </footer>
 
-      {/* Artist Modal */}
-      {isModalOpen && selectedArtist && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+     {/* Artist Modal */}
+     {isModalOpen && selectedArtist && (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    onClick={closeModal}
+  >
+    <motion.div
+      initial={{ scale: 0.95, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0.95, opacity: 0 }}
+      className="bg-black/95 backdrop-blur-lg rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col border border-white/10"
+      onClick={e => e.stopPropagation()}
+    >
+      {/* Top Section: Image */}
+      <div className="relative w-full h-64 sm:h-80 md:h-96 flex-shrink-0 overflow-hidden rounded-t-3xl">
+        <Image
+          src={selectedArtist.image}
+          alt={selectedArtist.name}
+          fill
+          className="object-cover object-center"
+          sizes="(max-width: 768px) 100vw, 42rem"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
+        <button
           onClick={closeModal}
+          className="absolute top-4 right-4 p-2 rounded-full bg-black/80 hover:bg-black/90 transition-colors border border-white/10"
         >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-black/95 backdrop-blur-lg rounded-3xl max-w-2xl w-full border border-white/10 my-8"
-            onClick={e => e.stopPropagation()}
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Scrollable Content */}
+      <div className="flex-1 overflow-y-auto p-6 bg-black/95">
+        <h2 className="text-3xl font-bold mb-2 text-white">{selectedArtist.name}</h2>
+        <p className="text-lg text-white/90 mb-4">{selectedArtist.genre}</p>
+        <p className="text-white/90 mb-6">{selectedArtist.bio}</p>
+
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-white">Achievements</h3>
+          <div className="flex flex-wrap gap-2">
+            {selectedArtist.achievements.map((achievement, index) => (
+              <span key={index} className="bg-white/10 px-3 py-1 rounded-full text-sm text-white/90">
+                {achievement}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-4">
+          {/* Instagram Link */}
+          <a
+            href={selectedArtist.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors"
           >
-            <div className="relative h-96">
-              <Image
-                src={selectedArtist.image}
-                alt={selectedArtist.name}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
-              <button
-                onClick={closeModal}
-                className="absolute top-4 right-4 p-2 rounded-full bg-black/80 hover:bg-black/90 transition-colors border border-white/10"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div className="p-6 bg-black/95 max-h-[60vh] overflow-y-auto">
-              <h2 className="text-3xl font-bold mb-2 text-white">{selectedArtist.name}</h2>
-              <p className="text-lg text-white/90 mb-4">{selectedArtist.genre}</p>
-              <p className="text-white/90 mb-6">{selectedArtist.bio}</p>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-white">Achievements</h3>
-                <div className="flex flex-wrap gap-2">
-                  {selectedArtist.achievements.map((achievement, index) => (
-                    <span key={index} className="bg-white/10 px-3 py-1 rounded-full text-sm text-white/90">
-                      {achievement}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="mt-6 flex gap-4">
-                <a
-                  href={selectedArtist.social.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                  Instagram
-                </a>
-                <a
-                  href={selectedArtist.social.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                  </svg>
-                  Twitter
-                </a>
-                <a
-                  href={selectedArtist.social.spotify}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-                  </svg>
-                  Spotify
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
+            {/* Instagram SVG */}
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
+            </svg>
+            Instagram
+          </a>
+
+          {/* Twitter Link */}
+          <a
+            href={selectedArtist.social.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors"
+          >
+            {/* Twitter SVG */}
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+            Twitter
+          </a>
+
+          {/* Spotify Link */}
+          <a
+            href={selectedArtist.social.spotify}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors"
+          >
+            {/* Spotify SVG */}
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+            </svg>
+            Spotify
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  </motion.div>
+)}
+
+
+
 
       {/* Story Modal */}
 {isStoryOpen && (
