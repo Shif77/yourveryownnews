@@ -304,41 +304,61 @@ export default function ArtistPage() {
             </p>
             
             {/* Audio Player */}
-            <div className="space-y-2">
+            <div className="space-y-1">
               <p className="text-sm opacity-80">Listen to his music</p>
-              <div className="bg-white/5 p-2 backdrop-blur-lg border border-white/10 inline-block">
-                <div className="flex items-center gap-1.5">
+              <div className="bg-white/5 p-2 backdrop-blur-lg border border-white/10 rounded-lg">
+                <div className="flex items-center gap-2">
                   <button
                     onClick={togglePlay}
-                    className="w-6 h-6 flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 transition-opacity"
+                    className="w-8 h-8 flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-600 rounded-full hover:opacity-90 transition-opacity"
                   >
                     {isPlaying ? (
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     ) : (
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     )}
                   </button>
-                  <div className="flex-1 w-32">
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between text-xs text-white/60 mb-0.5">
+                      <span>{formatTime(currentTime * (duration / 100))}</span>
+                      <span>{formatTime(duration)}</span>
+                    </div>
                     <input
                       type="range"
                       min="0"
-                      max={duration}
+                      max="100"
                       value={currentTime}
-                      onChange={handleSeek}
-                      className="w-full h-0.5 bg-white/20 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-1.5 [&::-webkit-slider-thumb]:h-1.5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white"
+                      onChange={(e) => {
+                        const value = parseFloat(e.target.value);
+                        setCurrentTime(value);
+                        if (audioRef.current) {
+                          const time = (value / 100) * audioRef.current.duration;
+                          audioRef.current.currentTime = time;
+                        }
+                      }}
+                      className="w-full h-0.5 bg-white/20 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-2 [&::-webkit-slider-thumb]:h-2 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white"
                     />
                   </div>
                 </div>
                 <audio
                   ref={audioRef}
-                  src="/images/artist/maya.mp3"
-                  onTimeUpdate={handleTimeUpdate}
-                  onLoadedMetadata={handleTimeUpdate}
+                  src="/images/artist/ayush.mp3"
+                  onTimeUpdate={() => {
+                    if (audioRef.current) {
+                      const progress = (audioRef.current.currentTime / audioRef.current.duration) * 100;
+                      setCurrentTime(progress);
+                    }
+                  }}
+                  onLoadedMetadata={(e) => {
+                    setDuration(e.currentTarget.duration);
+                    const progress = (e.currentTarget.currentTime / e.currentTarget.duration) * 100;
+                    setCurrentTime(progress);
+                  }}
                 />
               </div>
             </div>
@@ -566,17 +586,18 @@ export default function ArtistPage() {
       initial={{ scale: 0.95, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0.95, opacity: 0 }}
-      className="bg-black/95 backdrop-blur-lg rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col border border-white/10"
+      className="bg-black/95 backdrop-blur-lg rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto border border-white/10"
       onClick={e => e.stopPropagation()}
     >
       {/* Top Section: Image */}
-      <div className="relative w-full h-64 sm:h-80 md:h-96 flex-shrink-0 overflow-hidden rounded-t-3xl">
+      <div className="relative w-full aspect-square max-h-[50vh] overflow-hidden rounded-t-3xl">
         <Image
           src={selectedArtist.image}
           alt={selectedArtist.name}
           fill
           className="object-cover object-center"
           sizes="(max-width: 768px) 100vw, 42rem"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
         <button
@@ -589,8 +610,8 @@ export default function ArtistPage() {
         </button>
       </div>
 
-      {/* Scrollable Content */}
-      <div className="flex-1 overflow-y-auto p-6 bg-black/95">
+      {/* Content Section */}
+      <div className="p-6 bg-black/95">
         <h2 className="text-3xl font-bold mb-2 text-white">{selectedArtist.name}</h2>
         <p className="text-lg text-white/90 mb-4">{selectedArtist.genre}</p>
         <p className="text-white/90 mb-6">{selectedArtist.bio}</p>
@@ -663,19 +684,19 @@ export default function ArtistPage() {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+    className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
     onClick={closeStory}
   >
     <motion.div
       initial={{ scale: 0.9, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0.9, opacity: 0 }}
-      className="bg-black/95 backdrop-blur-lg rounded-3xl max-w-4xl w-full border border-white/10 my-8"
+      className="bg-black/95 backdrop-blur-lg rounded-3xl max-w-4xl w-full border border-white/10 max-h-[90vh] overflow-y-auto"
       onClick={e => e.stopPropagation()}
     >
       <div className="relative h-96">
         <Image
-          src="/images/artist/spotlight.jpg"
+          src="/images/artist/weeknd2.jpg"
           alt="Artist Story"
           fill
           className="object-cover"
@@ -745,12 +766,7 @@ export default function ArtistPage() {
 
         {/* Bottom Close Button */}
         <div className="flex justify-center mt-8">
-          <button
-            onClick={closeStory}
-            className="px-6 py-2 rounded-full bg-black/80 hover:bg-black/90 transition-colors border border-white/10 text-white text-lg"
-          >
-            Close ✕
-          </button>
+          
         </div>
       </div>
     </motion.div>
