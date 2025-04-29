@@ -113,7 +113,7 @@ export default function Home() {
         date: "Apr 6, 2025",
       },
       {
-        href: "/articles/nightlife-guide",
+        href: "/articles/event",
         img: "/images/articles/event.jpg",
         title: "Looking for an event planner? Contact with them",
         category: "Event",
