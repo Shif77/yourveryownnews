@@ -120,10 +120,10 @@ export default function Home() {
         date: "Apr 4, 2025",
       },
       {
-        href: "/articles/coffee-corners",
-        img: "/images/articles/coffe.jpeg",
-        title: "Coziest Coffee Corners You’ll Love",
-        category: "Food & Drink",
+        href: "/articles/mindful-minute",
+        img: "/images/articles/reset.jpg",
+        title: "The Pause Place",
+        category: "Mindful Minute",
         date: "Apr 2, 2025",
       }
     ].map((article, idx) => (
@@ -148,45 +148,77 @@ export default function Home() {
 
 
 
-{/* Featured Video Section */}
+{/* Featured Creator Spotlight Section */}
 <section className="px-4 sm:px-8 py-12 bg-zinc-900 text-white">
   <div className="max-w-4xl mx-auto">
     {/* Header with decorative elements */}
-    <div className="flex flex-col items-center mb-6">
+    <div className="flex flex-col items-center mb-8">
       <div className="flex items-center space-x-2 mb-2">
         <div className="h-0.5 w-6 bg-yellow-500"></div>
-        <span className="text-sm uppercase tracking-wider text-yellow-500">Must Watch</span>
+        <span className="text-sm uppercase tracking-wider text-yellow-500">Featured Content</span>
         <div className="h-0.5 w-6 bg-yellow-500"></div>
       </div>
-      <h2 className="text-2xl font-bold">Featured Video</h2>
+      <h2 className="text-2xl font-bold">Content Spotlight</h2>
     </div>
     
-    {/* Video container with distinctive styling */}
+    {/* Content card with distinctive styling */}
     <div className="relative group">
       {/* Subtle gradient border effect */}
       <div className="absolute -inset-0.5 bg-gradient-to-br from-zinc-700 via-yellow-500/50 to-zinc-700 rounded-lg opacity-50 blur-sm"></div>
       
       <div className="relative bg-zinc-800 rounded-lg overflow-hidden">
-        {/* Video with proper aspect ratio */}
-        <div className="relative">
-          <iframe
-            className="w-full aspect-video"
-            src="https://www.youtube.com/embed/zIZaDTfmVsA?start=23"
-            title="Featured Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+        <div className="grid md:grid-cols-2 gap-6 p-6">
+          {/* Content preview */}
+          <div className="relative">
+            <img 
+              src="/images/content-preview.jpg" 
+              alt="Featured Content" 
+              className="w-full h-[300px] object-cover rounded-lg"
+            />
+            <div className="absolute bottom-4 left-4 flex space-x-3">
+              <a href="#" className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                </svg>
+              </a>
+              <a href="#" className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
           
-          {/* Corner accent */}
-          <div className="absolute top-0 right-0 border-t-8 border-r-8 border-yellow-500 w-6 h-6"></div>
-        </div>
-        
-        {/* Video info with minimal details */}
-        <div className="p-4 border-t border-zinc-700">
-          <div className="flex justify-between items-center">
-            <h3 className="font-medium">Why This Video Is Worth Your Time</h3>
-            <span className="text-xs px-2 py-0.5 bg-yellow-500 text-black rounded-full">New</span>
+          {/* Content info */}
+          <div className="flex flex-col justify-center">
+            <h3 className="text-2xl font-bold mb-2">Digital Art Collection</h3>
+            <p className="text-yellow-500 text-sm mb-4">Exclusive Series</p>
+            <p className="text-zinc-300 mb-4">
+              "A curated collection of digital art pieces that explore the intersection of technology and creativity. Each piece tells a unique story of innovation and expression."
+            </p>
+            <div className="space-y-2">
+              <div className="flex items-center text-sm text-zinc-400">
+                <span className="w-4 h-4 mr-2 text-yellow-500">
+                  <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                    <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/>
+                  </svg>
+                </span>
+                50+ Unique Pieces
+              </div>
+              <div className="flex items-center text-sm text-zinc-400">
+                <span className="w-4 h-4 mr-2 text-yellow-500">
+                  <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+                    <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
+                  </svg>
+                </span>
+                Limited Edition
+              </div>
+            </div>
+            <button className="mt-6 px-6 py-2 bg-yellow-500 text-black font-medium rounded-lg hover:bg-yellow-600 transition-colors">
+              Explore Collection
+            </button>
           </div>
         </div>
       </div>
