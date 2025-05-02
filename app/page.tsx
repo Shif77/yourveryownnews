@@ -191,10 +191,10 @@ export default function Home() {
           
           {/* Content info */}
           <div className="flex flex-col justify-center">
-            <h3 className="text-2xl font-bold mb-2">Digital Art Collection</h3>
-            <p className="text-yellow-500 text-sm mb-4">Exclusive Series</p>
+            <h3 className="text-2xl font-bold mb-2">The Future of Storytelling</h3>
+            <p className="text-yellow-500 text-sm mb-4">Immersive Experience</p>
             <p className="text-zinc-300 mb-4">
-              "A curated collection of digital art pieces that explore the intersection of technology and creativity. Each piece tells a unique story of innovation and expression."
+              "Step into a world where stories come alive through cutting-edge technology and creative innovation. Our latest collection merges traditional storytelling with AI-powered interactive elements, creating an unprecedented narrative experience that adapts to your journey."
             </p>
             <div className="space-y-2">
               <div className="flex items-center text-sm text-zinc-400">
@@ -204,7 +204,7 @@ export default function Home() {
                     <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/>
                   </svg>
                 </span>
-                50+ Unique Pieces
+                AI-Powered Narratives
               </div>
               <div className="flex items-center text-sm text-zinc-400">
                 <span className="w-4 h-4 mr-2 text-yellow-500">
@@ -213,11 +213,11 @@ export default function Home() {
                     <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
                   </svg>
                 </span>
-                Limited Edition
+                Interactive Elements
               </div>
             </div>
             <button className="mt-6 px-6 py-2 bg-yellow-500 text-black font-medium rounded-lg hover:bg-yellow-600 transition-colors">
-              Explore Collection
+              Begin Your Journey
             </button>
           </div>
         </div>
