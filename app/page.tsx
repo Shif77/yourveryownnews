@@ -171,7 +171,7 @@ export default function Home() {
           {/* Content preview */}
           <div className="relative">
             <img 
-              src="/images/content-preview.jpg" 
+              src="/images/articles/story.jpeg" 
               alt="Featured Content" 
               className="w-full h-[300px] object-cover rounded-lg"
             />
@@ -216,9 +216,11 @@ export default function Home() {
                 Interactive Elements
               </div>
             </div>
-            <button className="mt-6 px-6 py-2 bg-yellow-500 text-black font-medium rounded-lg hover:bg-yellow-600 transition-colors">
-              Begin Your Journey
-            </button>
+            <Link href="/storytelling">
+              <button className="mt-6 px-6 py-2 bg-yellow-500 text-black font-medium rounded-lg hover:bg-yellow-600 transition-colors">
+                Begin Your Journey
+              </button>
+            </Link>
           </div>
         </div>
       </div>
