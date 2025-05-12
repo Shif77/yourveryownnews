@@ -194,9 +194,10 @@ export default function Home() {
             <h3 className="text-2xl font-bold mb-2">The Future of Storytelling</h3>
             <p className="text-yellow-500 text-sm mb-4">Immersive Experience</p>
             <p className="text-zinc-300 mb-4">
-              "Step into a world where stories come alive through cutting-edge technology and creative innovation. Our latest collection merges traditional storytelling with AI-powered interactive elements, creating an unprecedented narrative experience that adapts to your journey."
+              "In a world where digital narratives are evolving at breakneck speed, we're pioneering a revolutionary approach to storytelling that transcends traditional boundaries. Our latest collection isn't just about reading stories – it's about living them."
             </p>
-            <div className="space-y-2">
+            
+            <div className="space-y-3">
               <div className="flex items-center text-sm text-zinc-400">
                 <span className="w-4 h-4 mr-2 text-yellow-500">
                   <svg fill="currentColor" viewBox="0 0 20 20">
@@ -204,7 +205,7 @@ export default function Home() {
                     <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/>
                   </svg>
                 </span>
-                AI-Powered Narratives
+                AI-Powered Dynamic Narratives
               </div>
               <div className="flex items-center text-sm text-zinc-400">
                 <span className="w-4 h-4 mr-2 text-yellow-500">
@@ -213,14 +214,24 @@ export default function Home() {
                     <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
                   </svg>
                 </span>
-                Interactive Elements
+                Real-time Interactive Elements
               </div>
+              
+              
             </div>
-            <Link href="/storytelling">
-              <button className="mt-6 px-6 py-2 bg-yellow-500 text-black font-medium rounded-lg hover:bg-yellow-600 transition-colors">
-                Begin Your Journey
-              </button>
-            </Link>
+            <div className="mt-6 space-y-4">
+              <p className="text-sm text-zinc-400 italic">
+                "Join thousands of readers who are already experiencing the future of storytelling. Your next adventure awaits."
+              </p>
+              <Link href="/storytelling">
+                <button className="w-full px-6 py-3 bg-yellow-500 text-black font-medium rounded-lg hover:bg-yellow-600 transition-colors flex items-center justify-center space-x-2">
+                  <span>Begin Your Journey</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
