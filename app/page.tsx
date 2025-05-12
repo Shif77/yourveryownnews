@@ -189,49 +189,83 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Content info */}
-          <div className="flex flex-col justify-center">
-            <h3 className="text-2xl font-bold mb-2">The Future of Storytelling</h3>
-            <p className="text-yellow-500 text-sm mb-4">Immersive Experience</p>
-            <p className="text-zinc-300 mb-4">
-              "In a world where digital narratives are evolving at breakneck speed, we're pioneering a revolutionary approach to storytelling that transcends traditional boundaries. Our latest collection isn't just about reading stories – it's about living them."
-            </p>
-            
-            <div className="space-y-3">
-              <div className="flex items-center text-sm text-zinc-400">
-                <span className="w-4 h-4 mr-2 text-yellow-500">
-                  <svg fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                    <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/>
-                  </svg>
-                </span>
-                AI-Powered Dynamic Narratives
-              </div>
-              <div className="flex items-center text-sm text-zinc-400">
-                <span className="w-4 h-4 mr-2 text-yellow-500">
-                  <svg fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
-                    <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
-                  </svg>
-                </span>
-                Real-time Interactive Elements
-              </div>
-              
-              
+          {/* Content info - Reimagined */}
+          <div className="flex flex-col justify-center space-y-6">
+            {/* Dynamic Title with Gradient */}
+            <div className="relative">
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent animate-gradient-x">
+                Digital Storytelling Revolution
+              </h3>
+              <div className="absolute -bottom-2 left-0 w-24 h-1 bg-yellow-500 rounded-full"></div>
             </div>
-            <div className="mt-6 space-y-4">
-              <p className="text-sm text-zinc-400 italic">
-                "Join thousands of readers who are already experiencing the future of storytelling. Your next adventure awaits."
+
+            {/* Interactive Tag */}
+            <div className="flex items-center space-x-2">
+              <span className="px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 rounded-full text-yellow-400 text-xs font-medium animate-pulse">
+                LIVE EXPERIENCE
+              </span>
+              <span className="text-zinc-400 text-sm">•</span>
+              <span className="text-zinc-400 text-sm">Interactive Stories</span>
+            </div>
+
+            {/* Main Description with Dynamic Background */}
+            <div className="relative p-6 bg-gradient-to-br from-zinc-800/50 via-zinc-900/50 to-zinc-800/50 rounded-xl border border-zinc-700/50 backdrop-blur-sm group hover:border-yellow-500/30 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/0 via-yellow-500/5 to-yellow-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+              <p className="text-zinc-300 relative z-10 leading-relaxed">
+                Embark on a revolutionary journey where your choices shape the narrative. Our AI-driven storytelling platform creates unique, personalized adventures that evolve with every decision you make. Welcome to the future of interactive storytelling.
               </p>
-              <Link href="/storytelling">
-                <button className="w-full px-6 py-3 bg-yellow-500 text-black font-medium rounded-lg hover:bg-yellow-600 transition-colors flex items-center justify-center space-x-2">
+            </div>
+
+            {/* Feature Cards */}
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                {
+                  icon: (
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  ),
+                  title: "Adaptive Stories",
+                  desc: "Stories that learn and evolve",
+                  href: "/articles/adaptive"
+                },
+                {
+                  icon: (
+                    <path d="M15.98 1.804A1 1 0 0017 3v16a1 1 0 01-1.02 1.196A4.5 4.5 0 0113.5 18v-1.5a1 1 0 011-1h1V8.5a1 1 0 00-1-1h-3.5V5.5a1 1 0 00-1-1h-1V3a1 1 0 011.02-1.196A4.5 4.5 0 0112 3v1.5h3.5c.24 0 .47.042.684.12z" />
+                  ),
+                  title: "Neural Branching",
+                  desc: "Infinite story possibilities",
+                  href: "/articles/neural"
+                }
+              ].map((feature, idx) => (
+                <Link href={feature.href} key={idx}>
+                  <div className="p-4 bg-zinc-800/50 rounded-xl border border-zinc-700/30 hover:border-yellow-500/30 transition-all duration-300 group cursor-pointer">
+                    <div className="flex items-start space-x-3">
+                      <span className="p-2 bg-yellow-500/10 rounded-lg group-hover:bg-yellow-500/20 transition-colors">
+                        <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                          {feature.icon}
+                        </svg>
+                      </span>
+                      <div>
+                        <h4 className="text-white font-medium group-hover:text-yellow-400 transition-colors">{feature.title}</h4>
+                        <p className="text-sm text-zinc-400">{feature.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* Call to Action */}
+            <Link href="/storytelling" className="group">
+              <button className="w-full relative overflow-hidden px-6 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-medium rounded-xl group-hover:from-yellow-400 group-hover:to-yellow-500 transition-all duration-500 transform group-hover:scale-[1.02]">
+                <span className="relative z-10 flex items-center justify-center space-x-2">
                   <span>Begin Your Journey</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </button>
-              </Link>
-            </div>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/0 via-white/20 to-yellow-400/0 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
