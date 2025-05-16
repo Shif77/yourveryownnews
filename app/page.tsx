@@ -34,12 +34,12 @@ export default function Home() {
           ))}
         </div>
         <nav className="space-x-4 hidden md:flex">
-          <a href="#" className="hover:text-yellow-500">Home</a>
-          <a href="#" className="hover:text-yellow-500">Podcast</a>
-          <a href="#" className="hover:text-yellow-500">YouTube</a>
-          <a href="#" className="hover:text-yellow-500">Art & Music</a>
-          <a href="#" className="hover:text-yellow-500">Store</a>
-          <a href="#" className="hover:text-yellow-500">Archive</a>
+          <Link href="/" className="hover:text-yellow-500">Home</Link>
+          <Link href="#" className="hover:text-yellow-500">Podcast</Link>
+          <Link href="#" className="hover:text-yellow-500">YouTube</Link>
+          <Link href="/football" className="hover:text-yellow-500">Football</Link>
+          <Link href="#" className="hover:text-yellow-500">Store</Link>
+          <Link href="#" className="hover:text-yellow-500">Archive</Link>
         </nav>
         <div className="space-x-2">
           <button className="px-4 py-2 bg-yellow-500 rounded-xl hover:bg-yellow-600">
