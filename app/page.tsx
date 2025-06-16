@@ -38,7 +38,7 @@ export default function Home() {
           <Link href="#" className="hover:text-yellow-500">Podcast</Link>
           <Link href="#" className="hover:text-yellow-500">YouTube</Link>
           <Link href="/football" className="hover:text-yellow-500">Football</Link>
-          <Link href="#" className="hover:text-yellow-500">Store</Link>
+          <Link href="/store" className="hover:text-yellow-500">Store</Link>
           <Link href="#" className="hover:text-yellow-500">Archive</Link>
         </nav>
         <div className="space-x-2">
