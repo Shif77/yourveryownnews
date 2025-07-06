@@ -35,7 +35,7 @@ export default function Home() {
         </div>
         <nav className="space-x-4 hidden md:flex">
           <Link href="/" className="hover:text-yellow-500">Home</Link>
-          <Link href="#" className="hover:text-yellow-500">Podcast</Link>
+          <Link href="/trends" className="hover:text-yellow-500">Trends</Link>
           <Link href="/blogs" className="hover:text-yellow-500">Blogs</Link>
           <Link href="/football" className="hover:text-yellow-500">Football</Link>
           <Link href="/store" className="hover:text-yellow-500">Store</Link>
