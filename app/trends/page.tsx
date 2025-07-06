@@ -13,6 +13,11 @@ interface TrendingItem {
   location: string;
   impact: number;
   hashtags: string[];
+  readTime?: string;
+  author?: string;
+  views?: number;
+  shares?: number;
+  relatedTopics?: string[];
 }
 
 export default function TrendsPage() {
@@ -45,13 +50,18 @@ export default function TrendsPage() {
     {
       id: 1,
       title: "Digital Bangladesh Innovation Summit",
-      description: "Revolutionizing the tech landscape with groundbreaking local innovations and startups.",
+      description: "Revolutionizing the tech landscape with groundbreaking local innovations and startups. The summit showcases the latest technological advancements, bringing together industry leaders, entrepreneurs, and innovators from across the country. Experience the future of digital transformation in Bangladesh.",
       category: "Technology",
       date: "January 15, 2024",
       image: "/images/articles/all.jpg",
       location: "Dhaka",
       impact: 95,
-      hashtags: ["#DigitalBangladesh", "#Innovation", "#TechStartups"]
+      hashtags: ["#DigitalBangladesh", "#Innovation", "#TechStartups"],
+      readTime: "5 min read",
+      author: "Tech Innovation BD",
+      views: 15000,
+      shares: 2500,
+      relatedTopics: ["Digital Economy", "Startup Ecosystem", "Tech Education"]
     },
     {
       id: 2,
@@ -180,41 +190,135 @@ export default function TrendsPage() {
           </div>
         </section>
       </div>
-
-      {/* Modal for Selected Item */}
+module.exports = {
+  // ... other config
+  
+}
+      {/* Fixed Modal for Selected Item */}
       <AnimatePresence>
         {selectedItem && (
           <motion.div
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/90 z-50 flex items-start justify-center overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedItem(null)}
           >
             <motion.div
-              className="bg-zinc-900 rounded-3xl overflow-hidden max-w-4xl w-full"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-full max-w-4xl mx-4 my-8 max-h-[90vh] bg-zinc-900 rounded-3xl overflow-y-auto"
+              style={{
+                scrollbarWidth: 'thin',
+                scrollbarColor: '#3f3f46 #18181b'
+              }}
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
               onClick={e => e.stopPropagation()}
             >
-              <img 
-                src={selectedItem.image} 
-                alt={selectedItem.title} 
-                className="w-full h-72 object-cover"
-              />
-              <div className="p-8 space-y-6">
-                <h2 className="text-3xl font-bold">{selectedItem.title}</h2>
-                <p className="text-gray-300">{selectedItem.description}</p>
-                <div className="flex flex-wrap gap-3">
-                  {selectedItem.hashtags.map(tag => (
-                    <span 
-                      key={tag}
-                      className="px-4 py-2 rounded-full bg-green-500/20 text-green-400"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedItem(null)}
+                className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 transition-colors flex items-center justify-center text-white"
+                aria-label="Close modal"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* Modal Content */}
+              <div className="relative">
+                <div className="w-full h-[40vh] relative">
+                  <img 
+                    src={selectedItem.image} 
+                    alt={selectedItem.title} 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                </div>
+
+                <div className="p-8 space-y-8">
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-4">
+                        <span className="px-3 py-1 rounded-full bg-green-500/20 text-green-400">
+                          {selectedItem.category}
+                        </span>
+                        <span className="text-gray-400">{selectedItem.location}</span>
+                      </div>
+                      <h2 className="text-4xl font-bold">{selectedItem.title}</h2>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-emerald-400 text-lg font-semibold">{selectedItem.date}</p>
+                      <p className="text-gray-400">{selectedItem.readTime}</p>
+                    </div>
+                  </div>
+
+                  <div className="prose prose-invert max-w-none">
+                    <p className="text-xl text-gray-300">{selectedItem.description}</p>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-6 py-6 border-y border-gray-800">
+                    <div className="text-center">
+                      <p className="text-2xl font-bold text-emerald-400">{selectedItem.impact}%</p>
+                      <p className="text-gray-400">Impact Score</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-2xl font-bold text-emerald-400">{selectedItem.views?.toLocaleString()}</p>
+                      <p className="text-gray-400">Views</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-2xl font-bold text-emerald-400">{selectedItem.shares?.toLocaleString()}</p>
+                      <p className="text-gray-400">Shares</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-semibold">Related Topics</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedItem.relatedTopics?.map(topic => (
+                        <span 
+                          key={topic}
+                          className="px-4 py-2 rounded-full bg-zinc-800 hover:bg-zinc-700 cursor-pointer transition-colors"
+                        >
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    {selectedItem.hashtags.map(tag => (
+                      <span 
+                        key={tag}
+                        className="px-4 py-2 rounded-full bg-green-500/20 text-green-400 hover:bg-green-500/30 cursor-pointer transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="font-semibold">{selectedItem.author}</p>
+                        <p className="text-sm text-gray-400">Content Creator</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <button className="px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 transition-colors">
+                        Share
+                      </button>
+                      <button className="px-6 py-3 rounded-full bg-zinc-800 hover:bg-zinc-700 transition-colors">
+                        Save
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>

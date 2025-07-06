@@ -21,7 +21,8 @@
     "react-infinite-scroll-component": "^6.1.0",
     "react-leaflet": "^5.0.0",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "remark-html": "^16.0.1",
+    "tailwind-scrollbar": "^4.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
