@@ -18,11 +18,27 @@ interface TrendingItem {
 export default function TrendsPage() {
   const [selectedItem, setSelectedItem] = useState<TrendingItem | null>(null);
   const [scrollY, setScrollY] = useState(0);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
+    const handleResize = () => {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    // Set initial dimensions
+    handleResize();
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const trendingItems: TrendingItem[] = [
@@ -74,13 +90,13 @@ export default function TrendsPage() {
 
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => (
+        {dimensions.width > 0 && Array.from({ length: 20 }).map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-white rounded-full opacity-20"
             animate={{
-              x: [Math.random() * window.innerWidth, Math.random() * window.innerWidth],
-              y: [Math.random() * window.innerHeight, Math.random() * window.innerHeight],
+              x: [Math.random() * dimensions.width, Math.random() * dimensions.width],
+              y: [Math.random() * dimensions.height, Math.random() * dimensions.height],
             }}
             transition={{
               duration: Math.random() * 10 + 10,
